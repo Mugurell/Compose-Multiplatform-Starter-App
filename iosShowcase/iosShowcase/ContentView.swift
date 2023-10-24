@@ -1,12 +1,18 @@
 import SwiftUI
-import shared
+import Shared
 
 struct ContentView: View {
-	let greet = Greeting().greet()
-
 	var body: some View {
-		Text(greet)
+        SharedComposable()
 	}
+}
+
+struct SharedComposable: UIViewControllerRepresentable {
+    func makeUIViewController(context: Context) -> some UIViewController {
+        MainViewControllerKt.MainViewController()
+    }
+    
+    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {}
 }
 
 struct ContentView_Previews: PreviewProvider {
